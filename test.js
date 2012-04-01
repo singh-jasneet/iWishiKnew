@@ -1,2 +1,3 @@
-var util = require('util');
-util.format('%s:%s','foo');
+var w3 = require("./w3text.js");
+
+console.log(w3.getText());

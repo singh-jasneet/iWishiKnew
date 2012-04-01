@@ -9,6 +9,7 @@ var express = require('express')
 
 var youtube = require('./youtube.js');
 var ads = require('./adproducts.js');
+var text = require('./w3text.js');
 
 var app = module.exports = express.createServer();
 
@@ -35,10 +36,11 @@ app.configure('production', function(){
 
 app.get('/:term', function(req,res){
         console.log('request made');
+ 	if(req.params.term=='Sketchetik-Light.tff')
+	  return;
 	youtube.request(req.params.term,function(response){
 		ads.requestProds(req.params.term,function(products){
-			console.log(products);	
-			res.render('index',{title:'iWishiKnew',videos:response,prods:products,term:req.params.term});
+			res.render('index',{title:'iWishiKnew',videos:response,prods:products,term:req.params.term,words:text.getText()});
 		});
 	});
 });
@@ -48,6 +50,7 @@ app.get('/',function(req,res){
 });
 
 app.post('/',function(req,res){
+	if(req.body.searchterm!='Sketchetik-Light.tff')
 	res.redirect('/'+req.body.searchterm);	
 });
 

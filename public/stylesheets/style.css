@@ -1,7 +1,14 @@
+@font-face{
+ font-family:'Sketch';
+ src:url('sketchetik-light-webfont.ttf') format('truetype');
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin:0;
+  font: 14px  'Sketch', sans-serif;
   background-color:#F1EDC2;
+  background:url("/images/homepage.jpg") repeat;
+  
 }
 
 a {
@@ -9,27 +16,136 @@ a {
 }
 
 h2{
-  color:red;
+  color:black;
+  font-size:35px;
+}
+
+h3{
+ font-size:24px;
 }
 #searchbar{
   position:absolute;
   margin:0;
   padding:0;
-  left:38%;
-  top:40%; 
+  left:33%;
+  top:10%;
+  width:480px;
 }
 
+#hometext{
+position:absolute;
+font-size:55px;
+color:white;
+top:40%;
+left:22%;
+z-index:5;
+}
+
+#macbar{
+width:475px;
+height:30px;
+font-size: 20px;
+}
+
+#sb{
+position:relative;
+left:38%;
+margin-top:45px;
+height:30px;
+font-size:15px;
+width:150px;
+}
+
+
 #searchbar img{
- max-width:42%; 
+ position:relative;
+ padding-bottom:41px; 
+ left:5%; 
+ width:90%;
+ 
 }
 
 #column1{
-width:70%;
+width:710px;
 margin-right:5px;
+margin-left:100px;
 float:left;
+clear:left;
 }
 
 #column2{
 float:right;
-width:25%;
+width:240px;
+font-family:sans-serif;
+margin-right:60px;
 }
+
+#header{
+ float:left;
+ position:relative;
+ height:150px;
+ background-color:black;
+ margin:0;
+ margin-top:-15px;
+ padding:0;
+ width:100%;
+ -moz-box-shadow: 0 0 6px 6px  #888;
+ background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 44%, rgb(20,20,20) 72%, rgb(100,100,100) 100%);
+}
+
+#logo{
+ position:relative;
+ float:right;
+ right:4%;
+ top:25%;
+}
+#logo img{
+width:100px;
+}
+
+#headertext{
+float:left;
+z-index:5;
+color:#00aeef;
+font-size:60px;
+margin-top:-5px;
+margin-left:50px;
+}
+
+#searchresult{
+position:relative;
+float:left;
+height:85px;
+width:325px;
+margin-top:75px;
+margin-bottom:95px;
+background-color:#00aeef;
+}
+#searchresult p{
+position:absolute;
+font-size:45px;
+margin:0;
+padding:0;
+left:20%;
+top:15%;
+}
+
+#content{
+text-align:center;
+}
+
+.right{
+float:right;
+}
+
+.left{
+float:left;
+width:310px;
+margin-left:100px;
+}
+
+
+.bottom{
+clear:both;
+margin-bottom:20px;
+} 

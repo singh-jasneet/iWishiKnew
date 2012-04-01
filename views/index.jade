@@ -1,19 +1,39 @@
-h1 i Wish i Knew... #{term}
+div(id='header')
+  div(id='headertext')
+    p IWishIKnew
+  div(id='searchbar')
+  div(id='logo')
+    a(href='/')
+      img(src='/images/cloudbubbs.png')
+div(id='searchresult')
+  p #{term}
 div(id='column1')
-  h2 Beginner? Start here!
+ div(id='content')
+  h2 Beginner? Start here! 
+  h3 Pre-Requisite for this class: #{words['beg_prereq']}
   each video in videos
     if video.type == 'beginner'
-      h4 #{video['title']} 
-      a(href=video.url)
-        img(src=video.img)
-      p #{video['description']}
-  h2 Have experience? Start here!
+      h4 #{video['title']}
+      div(class='right') 
+        a(href=video.url)
+          img(src=video.img)
+      div(class='left')
+        p #{video['description']}
+      div(class='bottom')
+  h2 Have experience? Start here! 
+  h3 Pre-Requisites for this class: #{words['inter_prereq']}
   each video in videos
     if video.type != 'beginner'
       h4 #{video['title']}
-      a(href=video.url)
-        img(src=video.img)
-      p #{video['description']}
+      div(class='right')
+        a(href=video.url)
+          img(src=video.img)
+      div(class'left')
+        p #{video['description']}
+      div(class='bottom')
+  h2 Done watching a videos? Now practice!
+    a(href=words.quiz)
+      p Take a quiz!
 div(id='column2')
   h3 Suggested supplements 
   each product in prods
