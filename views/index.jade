@@ -1,0 +1,15 @@
+h1 i Wish i Knew... #{term}
+h2 Beginner? Start here!
+each video in videos
+  if video.type == 'beginner'
+    h4 #{video['title']} 
+    p #{video['description']}
+    a(href=video.url)
+      p #{video['url']}
+h2 Have experience? Start here!
+each video in videos
+  if video.type != 'beginner'
+    h4 #{video['title']}
+    p #{video['description']}
+    a(href=video.url)
+      p #{video['url']}
