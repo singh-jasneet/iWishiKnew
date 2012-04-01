@@ -1,15 +1,24 @@
 h1 i Wish i Knew... #{term}
-h2 Beginner? Start here!
-each video in videos
-  if video.type == 'beginner'
-    h4 #{video['title']} 
-    p #{video['description']}
-    a(href=video.url)
-      p #{video['url']}
-h2 Have experience? Start here!
-each video in videos
-  if video.type != 'beginner'
-    h4 #{video['title']}
-    p #{video['description']}
-    a(href=video.url)
-      p #{video['url']}
+div(id='column1')
+  h2 Beginner? Start here!
+  each video in videos
+    if video.type == 'beginner'
+      h4 #{video['title']} 
+      a(href=video.url)
+        img(src=video.img)
+      p #{video['description']}
+  h2 Have experience? Start here!
+  each video in videos
+    if video.type != 'beginner'
+      h4 #{video['title']}
+      a(href=video.url)
+        img(src=video.img)
+      p #{video['description']}
+div(id='column2')
+  h3 Suggested supplements 
+  each product in prods
+    h4 #{product['title']} sold by #{product['store']}
+    p #{product['description']}
+    p Price: #{product['price']}
+    a(href=product.link)
+      p See more

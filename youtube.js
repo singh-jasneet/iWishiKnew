@@ -24,6 +24,7 @@ var requestVideos = function(searchTerm,cb){
 			entry['author'] = list[i]['author'][0]['name']['$t'];
 			entry['description'] = list[i]['media$group']['media$description']['$t'];
 			entry['rating'] = list[i]['gd$rating']['average'];
+			entry['img'] = list[i]['media$group']['media$thumbnail'][0]['url'];
 			entry['viewCount'] = list[i]['yt$statistics']['viewCount'];
 			entry['favCount'] = list[i]['yt$statistics']['favoriteCount'];
 			entry['likes'] = list[i]['yt$rating']['numLikes'];
@@ -48,11 +49,9 @@ function sort(playlist){
 				keywords_freq[word] = 1;
 		}
 	}
-	//console.log(keywords_freq);
 	for(i=0;i<playlist.length;i++)
 	{
 		if((playlist[i]['keywords']).search(/begin/i)!=-1||(playlist[i]['keywords']).search(/first/i)!=-1){
-			//console.log(playlist[i]);
 			playlist[i]['type'] = 'beginner';
 		}
 		else

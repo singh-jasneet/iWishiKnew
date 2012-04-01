@@ -8,6 +8,7 @@ var express = require('express')
   , http = require('http')
 
 var youtube = require('./youtube.js');
+var ads = require('./adproducts.js');
 
 var app = module.exports = express.createServer();
 
@@ -34,8 +35,11 @@ app.configure('production', function(){
 
 app.get('/:term', function(req,res){
         console.log('request made');
-	youtube.request(req.params.term,function(response){	
-		res.render('index',{title:'iWishiKnew',videos:response,term:req.params.term});
+	youtube.request(req.params.term,function(response){
+		ads.requestProds(req.params.term,function(products){
+			console.log(products);	
+			res.render('index',{title:'iWishiKnew',videos:response,prods:products,term:req.params.term});
+		});
 	});
 });
 

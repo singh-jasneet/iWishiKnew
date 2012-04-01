@@ -22,3 +22,14 @@ h2{
 #searchbar img{
  max-width:42%; 
 }
+
+#column1{
+width:70%;
+margin-right:5px;
+float:left;
+}
+
+#column2{
+float:right;
+width:25%;
+}
