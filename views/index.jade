@@ -13,6 +13,7 @@ div(id='column1')
   h3 Pre-Requisite for this class: #{words['beg_prereq']}
   each video in videos
     if video.type == 'beginner'
+     div(class='ind')
       h4 #{video['title']}
       div(class='right') 
         a(href=video.url)
@@ -20,10 +21,13 @@ div(id='column1')
       div(class='left')
         p #{video['description']}
       div(class='bottom')
+      div(class='break')
+        p ____________________
   h2 Have experience? Start here! 
   h3 Pre-Requisites for this class: #{words['inter_prereq']}
   each video in videos
     if video.type != 'beginner'
+     div(class='ind')
       h4 #{video['title']}
       div(class='right')
         a(href=video.url)
@@ -31,6 +35,8 @@ div(id='column1')
       div(class'left')
         p #{video['description']}
       div(class='bottom')
+      div(class='break')
+        p ____________________
   h2 Done watching a videos? Now practice!
     a(href=words.quiz)
       p Take a quiz!

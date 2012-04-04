@@ -2,6 +2,23 @@
  font-family:'Sketch';
  src:url('sketchetik-light-webfont.ttf') format('truetype');
 }
+
+#login{
+position:relative;
+color:#00aeff;
+font-family:'Sketch';
+float:right;
+margin-right:10px;
+font-size:20px;
+text-decoration:underline;
+
+
+}
+
+.break p{
+color:blue;
+
+}
 body {
   padding: 0;
   margin:0;
@@ -9,6 +26,9 @@ body {
   background-color:#F1EDC2;
   background:url("/images/homepage.jpg") repeat;
   
+}
+.ind{
+margin-bottom:50px;
 }
 
 a {

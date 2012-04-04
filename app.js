@@ -36,7 +36,7 @@ app.configure('production', function(){
 
 app.get('/:term', function(req,res){
         console.log('request made');
- 	if(req.params.term=='Sketchetik-Light.tff')
+ 	if(req.params.term=='Sketchetik-Light.tff'||req.params.term=='favicon.ico')
 	  return;
 	youtube.request(req.params.term,function(response){
 		ads.requestProds(req.params.term,function(products){
